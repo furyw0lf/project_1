@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+  }
+
+  .sun {
+    width: 300px;
+    height: 300px;
+    background-color: #ffdb58;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 60s linear infinite;
+  }
+
+  .earth {
+    width: 150px;
+    height: 150px;
+    background-color: #00aaff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+    animation: orbit-earth 60s linear infinite, rotate-earth 60s linear infinite;
+  }
+
+  .moon {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: top left;
+    animation: orbit-moon 1s linear infinite, rotate-moon 1s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbit-earth {
+    0% {
+      transform: translate(-50%, -250px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -250px) rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-earth {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbit-moon {
+    0% {
+      transform: translate(-50%, -40px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -40px) rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-moon {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+<title>Moon Revolving Around Earth</title>
+</head>
+<body>
+  <div class="sun">
+    <div class="earth">
+      <div class="moon"></div>
+    </div>
+  </div>
+</body>
+</html>
